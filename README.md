@@ -14,4 +14,9 @@ channel name must be without '#'. Ex. To join #dgplug use only 'dgplug' as::
 
 	$ python iBot.py 12345pass dgplug hasgeek
 
-	
+Upcoming features::
+
+	[ ] Log all the messages from irc users.
+	[ ] Log channel activity.
+	[ ] Reply to messages from irc users.
+	[ ] Integrated commands for irc user info, spell checking
