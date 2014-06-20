@@ -16,6 +16,7 @@ channel name must be without '#'. Ex. To join #dgplug use only 'dgplug' as::
 
 Upcoming features::
 
+	[ ] Code messed up, re-factor and design working code.
 	[ ] Log all the messages from irc users.
 	[ ] Log channel activity.
 	[ ] Reply to messages from irc users.
