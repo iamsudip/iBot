@@ -38,28 +38,3 @@ class iBot:
 
 class iLogger(file_pointer):
     pass
-
-bot = iBot()
-bot.initiate(sys.argv[1])
-for channel in sys.argv[2:]:
-    bot.join(channel)
-
-while True:
-    ircmsg = bot.ircsock.recv(2048).strip('\n\r')
-    splitircmsg = ircmsg.split()
-    if "PING" in splitircmsg:
-        bot.pong(ircmsg[1])
-        continue
-    if bot.nick in ircmsg and "PRIVMSG" in ircmsg:
-        target = splitircmsg[0].split('!~')[0][1:]
-        print ircmsg
-        if not splitircmsg[2].startswith('#'): # Check if message to bot is in channel
-            bot.replypm(target, flagforpm=True) # Send pm to target
-            continue
-        else:
-            bot.replypm(splitircmsg[2], buddy=target) # Message buddy in channel
-            continue
-    if "PRIVMSG" in ircmsg:
-        if ircmsg.split(":")[2].startswith('s/'):
-            print "ssssss"
-            
